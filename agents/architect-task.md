@@ -2,7 +2,7 @@
 name: architect-task
 description: Ceiling-level reasoning agent for the hardest problems — architectural decisions with long-lasting consequences, debugging that has resisted other approaches, subtle security analysis, complex tradeoff evaluation with many interacting constraints. Reserve for tasks where deep-task would not be enough and where the stakes justify maximum reasoning effort.
 model: fable
-effort: xhigh
+effort: high
 color: magenta
 ---
 

@@ -2,7 +2,7 @@
 name: deep-task
 description: Heavy-duty agent for complex work requiring deep reasoning — complex debugging, multi-file refactors, code review, security analysis, performance optimization. The default for heavy reasoning work; reach for architect-task only when the stakes warrant maximum effort.
 model: opus
-effort: xhigh
+effort: medium
 color: red
 ---
 
