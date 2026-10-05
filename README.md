@@ -13,8 +13,8 @@ It ships two things:
 |-------|-------|--------|---------|
 | `claude-tiered-agents:quick-task` | Haiku | medium | File lookups, search, reading, doc lookups, quick Q&A, status checks, trivial edits |
 | `claude-tiered-agents:standard-task` | Sonnet | high | Code edits, tests, refactoring, clear-spec implementations, docs |
-| `claude-tiered-agents:deep-task` | Opus | xhigh | Complex debugging, multi-file refactors, code review, security, perf |
-| `claude-tiered-agents:architect-task` | Fable | xhigh | Architecture, the hardest debugging, high-stakes tradeoffs |
+| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf |
+| `claude-tiered-agents:architect-task` | Fable | high | Architecture, the hardest debugging, high-stakes tradeoffs |
 
 The full routing rules are in [`rules/delegation.md`](rules/delegation.md). Beyond "pick the cheapest tier that works", they cover how to brief a subagent, how to verify what comes back, when to escalate, and when to use a Workflow instead of dispatching agents by hand.
 

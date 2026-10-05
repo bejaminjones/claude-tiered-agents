@@ -6,8 +6,8 @@ These rules are loaded by the `claude-tiered-agents` plugin. Delegate to the che
 |-------|-------|--------|---------|
 | `claude-tiered-agents:quick-task` | Haiku | medium | File lookups, grep/search, reading, doc lookups, quick Q&A, status checks, trivial one-liner edits |
 | `claude-tiered-agents:standard-task` | Sonnet | high | Code edits, tests, refactoring, clear-spec implementations, docs |
-| `claude-tiered-agents:deep-task` | Opus | xhigh | Complex debugging, multi-file refactors, code review, security, perf — the default for heavy reasoning |
-| `claude-tiered-agents:architect-task` | Fable | xhigh | Architecture, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
+| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf — the default for heavy reasoning |
+| `claude-tiered-agents:architect-task` | Fable | high | Architecture, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
 
 The short names below (`quick-task`, `deep-task`, …) mean these agents.
 
