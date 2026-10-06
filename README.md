@@ -12,8 +12,8 @@ It ships two things:
 | Agent | Model | Effort | Use for |
 |-------|-------|--------|---------|
 | `claude-tiered-agents:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
-| `claude-tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
-| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of long or conflicting sources, data analysis where errors matter, thorough document review — the default for heavy reasoning |
+| `claude-tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, proofreading, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
+| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of sources that disagree, data analysis whose figures feed a decision or get published, thorough document review — the default for heavy reasoning |
 | `claude-tiered-agents:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
 
 The full routing rules are in [`rules/delegation.md`](rules/delegation.md). Beyond "pick the cheapest tier that works", they cover how to brief a subagent, how to verify what comes back, when to escalate, and when to use a Workflow instead of dispatching agents by hand.
@@ -50,7 +50,7 @@ To update by hand instead:
 
 To get updates, select **Check for updates** on the marketplace, or turn on **Sync automatically**.
 
-A plugin you install in Cowork is saved to your claude.ai account. It also reaches Claude Code the next time you start a session signed in to that account, so you don't need to install it twice.
+A plugin you install in Cowork is saved to your claude.ai account. It also reaches Claude Code the next time you start a session signed in to that account (Claude Code v2.1.273 or later; run `/reload-plugins` if it hasn't appeared), so you don't need to install it twice. This only works one way: a plugin installed from Claude Code's command line doesn't reach Cowork.
 
 ## Requirements
 
@@ -63,7 +63,7 @@ A plugin you install in Cowork is saved to your claude.ai account. It also reach
 
 **Cowork:** **Customize** → **Plugins** → `claude-tiered-agents` → **Disable plugin**.
 
-Either way, this removes both the agents and the routing rules.
+Each switch turns off both the agents and the routing rules, but only for the copy installed there. If you installed it in both Claude Code and Cowork, turn it off in both.
 
 ## License
 

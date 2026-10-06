@@ -5,8 +5,8 @@ These rules are loaded by the `claude-tiered-agents` plugin. Delegate to the che
 | Agent | Model | Effort | Use for |
 |-------|-------|--------|---------|
 | `claude-tiered-agents:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
-| `claude-tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
-| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of long or conflicting sources, data analysis where errors matter, thorough document review — the default for heavy reasoning |
+| `claude-tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, proofreading, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
+| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of sources that disagree, data analysis whose figures feed a decision or get published, thorough document review — the default for heavy reasoning |
 | `claude-tiered-agents:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
 
 The short names below (`quick-task`, `deep-task`, …) mean these agents.
@@ -27,7 +27,7 @@ The short names below (`quick-task`, `deep-task`, …) mean these agents.
 
 **Escalate with context.** When a lower-tier agent reports the task needs escalating, re-dispatch one tier up with its partial findings attached — don't make the higher tier start cold.
 
-**Learn from routing mistakes.** One mismatch (a tier too weak for the job, or the top tier spent on something trivial) is noise. A pattern seen more than once — a tier repeatedly failing at or coasting through a task shape — belongs in memory (as an auto-memory `feedback` entry, where the session has auto-memory), so it shapes routing in every future session.
+**Learn from routing mistakes.** One mismatch (a tier too weak for the job, or the top tier spent on something trivial) is noise. A pattern seen more than once — a tier repeatedly failing at or coasting through a task shape — belongs in memory, where the session has it (in Claude Code, an auto-memory `feedback` entry), so it shapes routing in every future session.
 
 **Parallelize independent tasks.** Mix tiers — a Haiku search and a Sonnet edit can run simultaneously. Sequence only when one result informs the next. Agents run in the background by default and notify on completion, so dispatch freely; force synchronous (`run_in_background: false`) only when the next step needs the result.
 
