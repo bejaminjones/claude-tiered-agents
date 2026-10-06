@@ -1,5 +1,5 @@
 {
-  "name": "claude-tiered-agents",
+  "name": "tiered-agents",
   "description": "Four model-tiered subagents (Haiku, Sonnet, Opus, Fable) plus routing rules that load at session start, so the main thread in Claude Code or Cowork delegates each job — code or knowledge work — to the cheapest model that handles it well.",
   "author": {
     "name": "Ben Jones",

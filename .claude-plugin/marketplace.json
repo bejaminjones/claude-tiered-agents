@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "claude-tiered-agents",
+      "name": "tiered-agents",
       "source": "./",
       "description": "Four model-tiered subagents plus routing rules that load at session start, for Claude Code and Cowork"
     }

@@ -1,13 +1,13 @@
 ## Model-Tiered Delegation
 
-These rules are loaded by the `claude-tiered-agents` plugin. Delegate to the cheapest model that handles the work well. The plugin provides four agents:
+These rules are loaded by the `tiered-agents` plugin. Delegate to the cheapest model that handles the work well. The plugin provides four agents:
 
 | Agent | Model | Effort | Use for |
 |-------|-------|--------|---------|
-| `claude-tiered-agents:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
-| `claude-tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, proofreading, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
-| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of sources that disagree, data analysis whose figures feed a decision or get published, thorough document review — the default for heavy reasoning |
-| `claude-tiered-agents:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
+| `tiered-agents:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
+| `tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, proofreading, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
+| `tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of sources that disagree, data analysis whose figures feed a decision or get published, thorough document review — the default for heavy reasoning |
+| `tiered-agents:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
 
 The short names below (`quick-task`, `deep-task`, …) mean these agents.
 
