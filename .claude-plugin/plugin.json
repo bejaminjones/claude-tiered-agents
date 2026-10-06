@@ -1,11 +1,11 @@
 {
   "name": "claude-tiered-agents",
-  "description": "Four model-tiered subagents (Haiku, Sonnet, Opus, Fable) plus routing rules that load at session start, so the main thread delegates each job to the cheapest model that handles it well.",
+  "description": "Four model-tiered subagents (Haiku, Sonnet, Opus, Fable) plus routing rules that load at session start, so the main thread in Claude Code or Cowork delegates each job — code or knowledge work — to the cheapest model that handles it well.",
   "author": {
     "name": "Ben Jones",
     "url": "https://github.com/bejaminjones"
   },
   "repository": "https://github.com/bejaminjones/claude-tiered-agents",
   "license": "MIT",
-  "keywords": ["subagents", "delegation", "model-routing", "cost"]
+  "keywords": ["subagents", "delegation", "model-routing", "cost", "cowork"]
 }

@@ -1,6 +1,6 @@
 # claude-tiered-agents
 
-A Claude Code plugin that lets your main session hand work to the cheapest model that can do it well. A file search goes to Haiku. A gnarly refactor goes to Opus. An architecture call goes to Fable.
+A plugin for Claude Code and Cowork that lets your main session hand work to the cheapest model that can do it well. A file search goes to Haiku. A gnarly refactor, or a careful read of conflicting reports, goes to Opus. An architecture or strategy call goes to Fable.
 
 It ships two things:
 
@@ -11,14 +11,16 @@ It ships two things:
 
 | Agent | Model | Effort | Use for |
 |-------|-------|--------|---------|
-| `claude-tiered-agents:quick-task` | Haiku | medium | File lookups, search, reading, doc lookups, quick Q&A, status checks, trivial edits |
-| `claude-tiered-agents:standard-task` | Sonnet | high | Code edits, tests, refactoring, clear-spec implementations, docs |
-| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf |
-| `claude-tiered-agents:architect-task` | Fable | high | Architecture, the hardest debugging, high-stakes tradeoffs |
+| `claude-tiered-agents:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
+| `claude-tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
+| `claude-tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of long or conflicting sources, data analysis where errors matter, thorough document review — the default for heavy reasoning |
+| `claude-tiered-agents:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
 
 The full routing rules are in [`rules/delegation.md`](rules/delegation.md). Beyond "pick the cheapest tier that works", they cover how to brief a subagent, how to verify what comes back, when to escalate, and when to use a Workflow instead of dispatching agents by hand.
 
 ## Install
+
+### Claude Code
 
 In a Claude Code session:
 
@@ -29,7 +31,7 @@ In a Claude Code session:
 
 Then start a new session (or run `/clear`) so the routing rules load.
 
-### Get updates automatically
+#### Get updates automatically
 
 Auto-update is off by default for marketplaces you add yourself. To turn it on, open `/plugin`, go to **Marketplaces**, select `tiered-agents-marketplace`, and choose **Enable auto-update**.
 
@@ -39,6 +41,17 @@ To update by hand instead:
 /plugin marketplace update tiered-agents-marketplace
 ```
 
+### Cowork
+
+1. Open **Customize** in the sidebar, then **Plugins**.
+2. Select **Add**, then **Add marketplace**, and enter `bejaminjones/claude-tiered-agents`.
+3. Install **claude-tiered-agents**.
+4. Start a new task so the routing rules load.
+
+To get updates, select **Check for updates** on the marketplace, or turn on **Sync automatically**.
+
+A plugin you install in Cowork is saved to your claude.ai account. It also reaches Claude Code the next time you start a session signed in to that account, so you don't need to install it twice.
+
 ## Requirements
 
 - **Model access.** `architect-task` runs on Fable, `deep-task` on Opus. If your plan doesn't include a model, that agent won't run. Edit its `model:` line in a local copy, or ask Claude to use the next tier down.
@@ -46,7 +59,11 @@ To update by hand instead:
 
 ## Turn it off
 
-`/plugin` → **Installed** → `claude-tiered-agents` → **Disable**. This removes both the agents and the routing rules.
+**Claude Code:** `/plugin` → **Installed** → `claude-tiered-agents` → **Disable**.
+
+**Cowork:** **Customize** → **Plugins** → `claude-tiered-agents` → **Disable plugin**.
+
+Either way, this removes both the agents and the routing rules.
 
 ## License
 

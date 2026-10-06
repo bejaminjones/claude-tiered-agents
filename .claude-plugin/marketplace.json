@@ -1,6 +1,6 @@
 {
   "name": "tiered-agents-marketplace",
-  "description": "Model-tiered subagents for Claude Code",
+  "description": "Model-tiered subagents for Claude Code and Cowork",
   "owner": {
     "name": "Ben Jones",
     "url": "https://github.com/bejaminjones"
@@ -9,7 +9,7 @@
     {
       "name": "claude-tiered-agents",
       "source": "./",
-      "description": "Four model-tiered subagents plus routing rules that load at session start"
+      "description": "Four model-tiered subagents plus routing rules that load at session start, for Claude Code and Cowork"
     }
   ]
 }
