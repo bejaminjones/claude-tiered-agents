@@ -47,7 +47,7 @@ To update by hand instead:
 
 1. Open **Customize** in the sidebar, then **Plugins**.
 2. Select **Add**, then **Add marketplace**, and enter `bejaminjones/claude-tiered-agents`.
-3. Install **tiered-agents**.
+3. Select **tiered-agents**, then **Add**.
 4. Start a new task so the routing rules load.
 
 To get updates, select **Check for updates** on the marketplace, or turn on **Sync automatically**.
