@@ -7,6 +7,8 @@ It ships two things:
 1. **Four subagents**, one per model tier.
 2. **Routing rules** that tell Claude when to use each one. A session-start hook loads them into every session, so you don't paste anything into your `CLAUDE.md`.
 
+**What it runs.** The only command is the session-start hook: `cat "${CLAUDE_PLUGIN_ROOT}/rules/delegation.md"`. It reads one file from inside the plugin and prints it into the session. The plugin sends nothing anywhere, fetches nothing, and collects no data. The subagents use the same tools and permissions your session already has.
+
 ## What's in the box
 
 | Agent | Model | Effort | Use for |
