@@ -1,4 +1,4 @@
-# tiered-agents
+# tierwise
 
 A plugin for Claude Code and Cowork that lets your main session hand work to the cheapest model that can do it well. A file search goes to Haiku. A gnarly refactor, or a careful read of conflicting reports, goes to Opus. An architecture or strategy call goes to Fable.
 
@@ -13,16 +13,16 @@ It ships two things:
 
 | Agent | Model | Effort | Use for |
 |-------|-------|--------|---------|
-| `tiered-agents:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
-| `tiered-agents:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, proofreading, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
-| `tiered-agents:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of sources that disagree, data analysis whose figures feed a decision or get published, thorough document review — the default for heavy reasoning |
-| `tiered-agents:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
+| `tierwise:quick-task` | Haiku | medium | File and folder lookups, grep/search, reading documents and web pages, pulling out facts, doc lookups, quick Q&A, status checks, trivial one-liner edits |
+| `tierwise:standard-task` | Sonnet | high | Drafting documents/emails/reports, summaries, proofreading, spreadsheets, routine data work, research with a clear question, code edits, tests, refactoring, clear-spec implementations, docs |
+| `tierwise:deep-task` | Opus | medium | Complex debugging, multi-file refactors, code review, security, perf, analysis of sources that disagree, data analysis whose figures feed a decision or get published, thorough document review — the default for heavy reasoning |
+| `tierwise:architect-task` | Fable | high | Architecture, strategy, hardest debugging, high-stakes tradeoffs — ceiling-level, when deep-task isn't enough |
 
 The full routing rules are in [`rules/delegation.md`](rules/delegation.md). Beyond "pick the cheapest tier that works", they cover how to brief a subagent, how to verify what comes back, when to escalate, and when to use a Workflow instead of dispatching agents by hand.
 
 ## Install
 
-> **Renamed from `claude-tiered-agents`.** If you installed it under the old name, remove that copy first (Claude Code: `/plugin uninstall claude-tiered-agents@tiered-agents-marketplace`; Cowork: **Customize** → **Plugins** → `claude-tiered-agents` → **Remove**), then install `tiered-agents` below. The old copy no longer gets updates, and keeping both loads the rules twice.
+> **Renamed.** This plugin was called `claude-tiered-agents`, then briefly `tiered-agents`. If you installed it under an old name, remove that copy first (Claude Code: `/plugin uninstall <old-name>@tiered-agents-marketplace`; Cowork: **Customize** → **Plugins** → the old name → **Remove**), then install `tierwise` below. Old copies no longer get updates, and keeping one alongside the new one loads the rules twice.
 
 ### Claude Code
 
@@ -30,7 +30,7 @@ In a Claude Code session:
 
 ```
 /plugin marketplace add bejaminjones/claude-tiered-agents
-/plugin install tiered-agents@tiered-agents-marketplace
+/plugin install tierwise@tiered-agents-marketplace
 ```
 
 Then start a new session (or run `/clear`) so the routing rules load.
@@ -49,7 +49,7 @@ To update by hand instead:
 
 1. Open **Customize** in the sidebar, then **Plugins**.
 2. Select **Add**, then **Add marketplace**, and enter `bejaminjones/claude-tiered-agents`.
-3. Select **tiered-agents**, then **Add**.
+3. Select **tierwise**, then **Add**.
 4. Start a new task so the routing rules load.
 
 To get updates, select **Check for updates** on the marketplace, or turn on **Sync automatically**.
@@ -63,9 +63,9 @@ A plugin you install in Cowork is saved to your claude.ai account. It also reach
 
 ## Turn it off
 
-**Claude Code:** `/plugin` → **Installed** → `tiered-agents` → **Disable**.
+**Claude Code:** `/plugin` → **Installed** → `tierwise` → **Disable**.
 
-**Cowork:** **Customize** → **Plugins** → `tiered-agents` → **Disable plugin**.
+**Cowork:** **Customize** → **Plugins** → `tierwise` → **Disable plugin**.
 
 Each switch turns off both the agents and the routing rules, but only for the copy installed there. If you installed it in both Claude Code and Cowork, turn it off in both.
 
