@@ -5,7 +5,7 @@
     "name": "Ben Jones",
     "url": "https://github.com/bejaminjones"
   },
-  "repository": "https://github.com/bejaminjones/claude-tiered-agents",
+  "repository": "https://github.com/bejaminjones/tierwise",
   "license": "MIT",
   "keywords": ["subagents", "delegation", "model-routing", "cost", "cowork"]
 }

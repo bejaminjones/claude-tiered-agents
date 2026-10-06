@@ -22,33 +22,33 @@ The full routing rules are in [`rules/delegation.md`](rules/delegation.md). Beyo
 
 ## Install
 
-> **Renamed.** This plugin was called `claude-tiered-agents`, then briefly `tiered-agents`. If you installed it under an old name, remove that copy first (Claude Code: `/plugin uninstall <old-name>@tiered-agents-marketplace`; Cowork: **Customize** → **Plugins** → the old name → **Remove**), then install `tierwise` below. Old copies no longer get updates, and keeping one alongside the new one loads the rules twice.
+> **Renamed.** This plugin was called `claude-tiered-agents`, then `tiered-agents`, and its marketplace was `tiered-agents-marketplace`. If you installed an old name, remove it first. In Claude Code, run `/plugin uninstall <old-name>@tiered-agents-marketplace` and then `/plugin marketplace remove tiered-agents-marketplace`. In Cowork, go to **Customize** → **Plugins**, remove the old plugin, and remove the old marketplace. Then install `tierwise` below. Old copies no longer get updates, and keeping one alongside the new one loads the rules twice.
 
 ### Claude Code
 
 In a Claude Code session:
 
 ```
-/plugin marketplace add bejaminjones/claude-tiered-agents
-/plugin install tierwise@tiered-agents-marketplace
+/plugin marketplace add bejaminjones/tierwise
+/plugin install tierwise@tierwise
 ```
 
 Then start a new session (or run `/clear`) so the routing rules load.
 
 #### Get updates automatically
 
-Auto-update is off by default for marketplaces you add yourself. To turn it on, open `/plugin`, go to **Marketplaces**, select `tiered-agents-marketplace`, and choose **Enable auto-update**.
+Auto-update is off by default for marketplaces you add yourself. To turn it on, open `/plugin`, go to **Marketplaces**, select `tierwise`, and choose **Enable auto-update**.
 
 To update by hand instead:
 
 ```
-/plugin marketplace update tiered-agents-marketplace
+/plugin marketplace update tierwise
 ```
 
 ### Cowork
 
 1. Open **Customize** in the sidebar, then **Plugins**.
-2. Select **Add**, then **Add marketplace**, and enter `bejaminjones/claude-tiered-agents`.
+2. Select **Add**, then **Add marketplace**, and enter `bejaminjones/tierwise`.
 3. Select **tierwise**, then **Add**.
 4. Start a new task so the routing rules load.
 
