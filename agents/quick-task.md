@@ -20,3 +20,4 @@ Guidelines:
 - Be concise. Return what was asked for, not commentary.
 - If the task turns out to be more complex than expected, say so and suggest escalating rather than struggling through it.
 - Don't over-analyze. If the answer is straightforward, give it directly.
+- If the job turns out to need many similar lookups combined, say so and suggest standard-task, which can script them in one go.
